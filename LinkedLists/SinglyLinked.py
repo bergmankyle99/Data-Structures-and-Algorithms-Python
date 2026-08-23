@@ -47,7 +47,7 @@ def display(head):
 
 display(Head)
 # insert at beginning
-def insert_at_beginning(head, val):
+def insert_at_beginning(head, val): #O(1)
     new_node = SinglyNode(val)
     new_node.next = head
     return new_node
@@ -56,7 +56,7 @@ Head = insert_at_beginning(Head, 7)
 display(Head)
 
 #insert in middle
-def insert_at_pos(head, val, pos):
+def insert_at_pos(head, val, pos): #O(n)
     if pos == 0:
         return insert_at_beginning(head, val)
     new_node = SinglyNode(val)
@@ -77,7 +77,7 @@ Head = insert_at_pos(Head, 6, 4)
 display(Head)
 
 #insert after node
-def insert_after(node, val):
+def insert_after(node, val): #O(1)
     if node is None:
         print("Previous node cannot be None")
         return
@@ -89,7 +89,7 @@ insert_after(C, 10)
 display(Head)
 
 #insert at end
-def insert_at_end(head, val):
+def insert_at_end(head, val): #O(1)
     new_node = SinglyNode(val)
     curr = head
     while curr.next:

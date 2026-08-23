@@ -28,14 +28,14 @@ class DoublyLinkedList:
         print("<->".join(elements))
 
     # insert at beginning O(1)
-    def insert_at_beginning(self, head, val):
+    def insert_at_beginning(self, head, val): #O(1)
         new_node = DoublyNode(val)
         head.prev = new_node
         new_node.next = head
         return new_node
 
     # insert at position O(n)
-    def insert_at_position(self, head, val, pos):
+    def insert_at_position(self, head, val, pos): #O(n)
         new_node = DoublyNode(val)
         if pos == 0:
             return self.insert_at_beginning(head, val)
@@ -58,13 +58,13 @@ class DoublyLinkedList:
         return head
 
     # delete at beginning
-    def delete_at_beginning(self, head: DoublyNode):
+    def delete_at_beginning(self, head: DoublyNode): #O(1)
         curr = head.next
         curr.prev = None
         return curr
 
     # delete node
-    def delete_at_pos(self, head, pos):
+    def delete_at_pos(self, head, pos): #O(n)
         if pos == 0:
             return self.delete_at_beginning(head)
         curr = head
@@ -86,7 +86,7 @@ class DoublyLinkedList:
             raise IndexError("Position out of bounds")
         return curr
 
-    def search(self, head: DoublyNode, val):
+    def search(self, head: DoublyNode, val): #O(n)
         curr = head
         idx = 0
         while curr:
