@@ -1,7 +1,6 @@
 
 class Stack:
     def __init__(self):
-        self.count = 0
         self.stack = []
 
     def add(self, val):
