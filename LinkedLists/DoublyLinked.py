@@ -90,5 +90,22 @@ def delete_at_pos(head, pos):
         raise IndexError("Position out of bounds")
     return curr
 print("Delete at Pos")
-Head = delete_at_pos(Head, 4)
+Head = delete_at_pos(Head, 2)
 display(Head)
+
+def search(head, val):
+    curr = head
+    idx = 0
+    while curr:
+        if curr.val == val:
+            return idx
+        curr = curr.next
+        idx += 1
+    return None
+
+res = search(Head, 8)
+if res:
+    Head = delete_at_pos(Head, res)
+    display(Head)
+else:
+    print("Doesn't Exist")
