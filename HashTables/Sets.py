@@ -1,7 +1,6 @@
-#lookup
-#add
-#delete
-
+#============================================================
+# Custom HashSet
+#============================================================
 class HashSet:
     def __init__(self, capacity=8):
         self.capacity = capacity
@@ -67,3 +66,40 @@ print(hashset.buckets)
 print(hashset.lookup("kyle"))
 hashset.delete("kyle")
 print(hashset.buckets)
+
+#============================================================
+# Built In HashSet
+#============================================================
+# create
+s = set()
+s = {1, 2, 3}          # literal syntax
+s = set([1, 2, 2, 3])  # from a list, dupes auto-removed -> {1, 2, 3}
+
+# add / remove
+s.add(4)
+s.remove(2)      # raises KeyError if not present
+s.discard(2)     # no error if not present
+s.pop()           # removes and returns an arbitrary element
+
+# check membership — O(1) average, same as your custom version
+if 3 in s:
+    print("found it")
+
+# size
+len(s)
+
+# iterate
+for item in s:
+    print(item)
+
+a = {1, 2, 3}
+b = {2, 3, 4}
+
+print(a | b)  # union -> {1, 2, 3, 4}
+print(a & b)  # intersection -> {2, 3}
+print(a - b)  # difference -> {1}
+print(a ^ b)  # symmetric difference -> {1, 4}
+
+a.issubset(b)  # False
+a.issuperset(b)  # False
+a.isdisjoint(b)  # False (they share elements)
