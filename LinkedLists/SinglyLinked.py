@@ -109,3 +109,24 @@ def search(head, val):
     return False
 
 print(search(Head, 9))
+
+def display_reversed(head):
+    if not head:
+        return
+    display_reversed(head.next)
+    print(head)
+
+
+
+def reverse_list(head):
+    curr = head
+    prev = None
+    while curr:
+        nxt = curr.next
+        curr.next = prev
+        prev = curr
+        curr = nxt
+    return prev
+
+new_list = reverse_list(Head)
+display(new_list)
